@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "lukaschunkobserver",
+  "version": "${version}",
+  "name": "LukasChunkObserver",
+  "description": "A lightweight, server-side Fabric mod that logs how long each player spends in every chunk to an SQLite database - the raw data for activity heatmaps.",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/lukaschunkobserver/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.github.lukasschr.lukaschunkobserver.LukasChunkObserver"
+    ]
+  },
+  "mixins": [
+    "lukaschunkobserver.mixins.json",
+    {
+      "config": "lukaschunkobserver.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
